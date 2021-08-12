@@ -1,10 +1,11 @@
 import random
+import numpy as np
 
-def _flip(p=0.48):
-    return 'male' if random.random() < p else 'female'
+def flip(p, f1, f2):
+    return f1 if random.random() < p else f2
 
 
-def _generate_object_from_multi_distributions(distributions: np.array, group: np.array):
+def generate_object_from_multi_distributions(distributions: np.array, group: np.array):
     distributions = np.cumsum(distributions)
     r = random.random()
     idx = (np.abs(distributions - r)).argmin()

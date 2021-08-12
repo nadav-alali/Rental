@@ -10,7 +10,16 @@ questions = ['Fuel saving is more important than performance?',
              'Environmental care is more important than performance?',
              'Smart features',
              'Home to work distance',
-             'Spacious vehicle',
-             'nature vs urbanic',
-             'safety vs mobility',
-             'student']
+             'Compact vs spacious vehicle',
+             'Urbanic vs nature',
+             'Safety vs mobility',
+             'age']
+
+male_prob = 0.48
+two_wheels_prob = 0.08
+
+
+
+################ Vehicle Constants #######################
+engine_types = ['electrical', 'hybrid', 'gas']
+engine_type_distribution = [0.04, 0.2, 0.76]
