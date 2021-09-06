@@ -60,7 +60,7 @@ class environment_factory:
         for index, v in enumerate(self.vehicles):
             self.vehicle_histogram[index] = self.vehicle_loss(v, self.avg_age)
 
-    def vehicle_loss(self, v: vehicle.vehicle, age: int):
+    def vehicle_loss(self, v: vehicle.vehicle, age):
         """
         calculates the vehicle's loss
         :param v: vehicle
@@ -73,7 +73,7 @@ class environment_factory:
         return vehicle_losses
 
 
-    def extract_vehicle_features(self, v: vehicle.vehicle, features: list, age: int):
+    def extract_vehicle_features(self, v: vehicle.vehicle, features, age):
         """
         The method that match a costumer survey section to a vehicle
         :param v: vehicle
@@ -103,14 +103,14 @@ class environment_factory:
                 # scooter or motorcycle
                 if v.seats_num == 1:
                     result += np.random.choice(range(7, 11))
-                elif v.trunk_size < 5: # mini
+                elif v.trunk_size < 5:  # mini
                     result += np.random.choice(range(5, 7))
                 else:
                     result += np.random.choice(range(1, 5))
                 pass
         return result / len(features)
 
-    def get_costumer_match(self, v: vehicle, survey, age: int):
+    def get_costumer_match(self, v, survey, age):
         """
         gets the total loss between a costumer and a vehicle
         :param v: vehicle

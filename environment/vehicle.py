@@ -2,7 +2,7 @@ import itertools
 from helper_functions import *
 
 
-def generate_gear(p, engine_type: str):
+def generate_gear(p, engine_type):
     """
     generates a vehicle gear by engine type and probability
     :param p: probability for 'auto gear'
@@ -29,7 +29,7 @@ class vehicle:
         self.seats_num = 0
         self.price = 0  # on a scale from 1 to 10
 
-    def calc_insurance(self, age: int):
+    def calc_insurance(self, age):
         """
         calculates the insurance by costumer's age
         :param age: costumer's age

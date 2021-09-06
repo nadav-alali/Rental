@@ -86,7 +86,7 @@ class vehicle_assignment:
         df_assignment = pd.DataFrame(assignment_data, columns=assignment_cols)
         write_to_excel(writer, vehicles_assignment_sheet, df_assignment)
 
-    def assign_vehicles_to_costumers(self, buy_algorithm: str, assign_algorithm: str):
+    def assign_vehicles_to_costumers(self, buy_algorithm, assign_algorithm):
         """
         perform the swap assignments
         :param buy_algorithm: algorithm that was used to purchase the vehciles

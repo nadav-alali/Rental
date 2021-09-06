@@ -24,7 +24,7 @@ def initialize_writer():
     return pd.ExcelWriter(output_path, engine='xlsxwriter')
 
 
-def write_to_excel(writer: pd.ExcelWriter, sheet_name: str, data_frame: pd.DataFrame):
+def write_to_excel(writer, sheet_name, data_frame):
     """
     :param writer: excel writer
     :param sheet_name: write the data frame into this sheet
@@ -45,7 +45,7 @@ def flip(p, f1, f2):
     return f1 if random.random() > p else f2
 
 
-def generate_object_from_multi_distributions(distributions: np.array, group: np.array):
+def generate_object_from_multi_distributions(distributions, group):
     """
     a function that returns a value from a given group by a given distribution
     :param distributions: distribution numpy array of size N

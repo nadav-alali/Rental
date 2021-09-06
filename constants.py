@@ -107,7 +107,7 @@ simulated_annealing_iters_bound = 10
 
 
 ######################## Vehicle purchase Constants #######################
-q_learneing_str = "q_learing"
+q_learning_str = "q_learning"
 default_costumers_num = 1000
 default_vehicles_types = 5
 default_vehicles_for_rental = 800
@@ -119,18 +119,18 @@ swaps_num = 500
 
 
 ######################## Main Constants #######################
-valid_purchase_algorithmm = {q_learneing_str, hill_climbing_str, stochastic_hill_climbing_str,
+valid_purchase_algorithmm = {q_learning_str, hill_climbing_str, stochastic_hill_climbing_str,
                              first_choice_hill_climbing_str, random_restart_hill_climbing_str, local_beam_search_str,
                              stochastic_local_beam_search_str, simulated_annealing_str}
 
-valid_assignment_algorithmm = valid_purchase_algorithmm - {q_learneing_str}
+valid_assignment_algorithmm = valid_purchase_algorithmm - {q_learning_str}
 
 invalid_purchase_error = f"You typed an incorrect purchase algorithm!!!\nType one of the next algorithms:\n1) " \
-                       f"{q_learneing_str}\n2) {hill_climbing_str}\n3) {stochastic_hill_climbing_str}\n4)" \
+                       f"{q_learning_str}\n2) {hill_climbing_str}\n3) {stochastic_hill_climbing_str}\n4)" \
                        f" {first_choice_hill_climbing_str}\n5) {random_restart_hill_climbing_str}\n6) " \
                        f"{local_beam_search_str}\n7) {stochastic_local_beam_search_str}\n8) {simulated_annealing_str}"
 
-invalid_assignment_error = f"You typed an incorrect purchase algorithm!!!\nType one of the next algorithms:\n1) " \
+invalid_assignment_error = f"You typed an incorrect assigning algorithm!!!\nType one of the next algorithms:\n1) " \
                                  f"{hill_climbing_str}\n2) {stochastic_hill_climbing_str}\n3) " \
                                  f"{first_choice_hill_climbing_str}\n4) {random_restart_hill_climbing_str}\n5) " \
                                  f"{local_beam_search_str}\n6) {stochastic_local_beam_search_str}\n7) " \

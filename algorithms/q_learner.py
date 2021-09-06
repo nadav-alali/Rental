@@ -12,7 +12,7 @@ class q_learner:
         self.q_values = np.zeros(self._size)
         self.q_counter = np.zeros(self._size)
 
-    def step(self, action: int):
+    def step(self, action):
         """
         :param action: environment action
         :return: the given action reward with added noise
@@ -20,7 +20,7 @@ class q_learner:
         assert 0 <= action < self._size
         return np.random.normal(loc=self.rewards[action], scale=self.rewards[action] / constants.scale_constant)
 
-    def epsilon_greedy(self, episodes_number: int, epsilon, epsilon_factor):
+    def epsilon_greedy(self, episodes_number, epsilon, epsilon_factor):
         """
         :param episodes_number: number of learning episodes
         :param epsilon:

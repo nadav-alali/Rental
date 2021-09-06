@@ -19,7 +19,7 @@ class local_search:
                               stochastic_local_beam_search_str: self._stochastic_local_beam_search,
                               simulated_annealing_str: self._simulated_annealing}
 
-    def get_algorithm(self, algorithm_name: str):
+    def get_algorithm(self, algorithm_name):
         """
         :param algorithm_name: A local search algorithm name
         :return: a pointer for the algorithm's function

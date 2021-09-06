@@ -9,7 +9,7 @@ from vehicle_assignment import vehicle_assignment
 import sys
 
 
-def extract_user_input(user_input: list):
+def extract_user_input(user_input):
     """
     checks if the given user's input is valid and extract's it
     :param user_input:
@@ -17,7 +17,7 @@ def extract_user_input(user_input: list):
     """
     if len(user_input) == 0:
         # default assignment
-        return q_learneing_str, hill_climbing_str, default_costumers_num, default_vehicles_types,\
+        return q_learning_str, hill_climbing_str, default_costumers_num, default_vehicles_types, \
                default_vehicles_for_rental
     elif len(user_input) < arguments_num:
         print(invalid_arguments_num)
@@ -66,7 +66,7 @@ def get_vehicles_and_factory(excel_writer, buying_algorithm, num_of_costumers, n
     factory = environment_factory(excel_writer, num_of_costumers, num_of_vehicle_type)
     v_ranks = factory.v_ranks
     v_ranks_size = len(v_ranks)
-    if buying_algorithm == constants.q_learneing_str:
+    if buying_algorithm == constants.q_learning_str:
         vehicles = get_vehicles(v_ranks, num_of_vehicles)
     else:
         local_search_env = local_search(range(v_ranks_size), v_ranks, first_problem_evaluation)
@@ -93,8 +93,7 @@ def get_vehicles_and_factory(excel_writer, buying_algorithm, num_of_costumers, n
     return vehicles, factory
 
 
-def assign_vehicles(excel_writer, purchase_algo: q_learneing_str, assigning_algo: hill_climbing_str,
-                    factory_, vehicles_):
+def assign_vehicles(excel_writer, purchase_algo, assigning_algo, factory_, vehicles_):
     """
     handles the second section of the problem
     :param excel_writer:
